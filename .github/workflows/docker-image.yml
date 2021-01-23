@@ -89,10 +89,10 @@ jobs:
     - uses: imranismail/setup-kustomize@v1
       with:
         kustomize-version: 3.8.6
-    - run: git clone https://${REPO_TOKEN}@github.com/gbaeke/realtimeapp-infra.git .
+    - run: git clone https://${REPO_TOKEN}@github.com/webmak1/realtimeapp-infra.git .
       env:
         REPO_TOKEN: ${{secrets.REPO_TOKEN}}
-    - run: kustomize edit set image gbaeke/flux-rt:${GITHUB_REF#refs/*/}
+    - run: kustomize edit set image webmakaka/flux-rt:${GITHUB_REF#refs/*/}
       working-directory: ./deploy/overlays/prd
     - run: git add .
     - run: |
